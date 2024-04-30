@@ -1,20 +1,38 @@
-import { Box, Button, Grid, Paper, TextField, Typography } from '@mui/material'
+import { Button, FormControl, Grid, MenuItem, Paper, Select, TextField, Typography } from '@mui/material'
 import React from 'react'
 
 const SignIn = () => {
-  return (
-      <Grid container justifyContent="center" alignItem="center" style={{height: "100vh"}}>
-          <Paper style={{height: "50vh"}}>
-              <Grid container direction="column" alignItem="center" >
-                <Typography variant="h1" >Log in</Typography>
-                <TextField fullWidth/>
-                <TextField />
-                <TextField />
-                <Button>Log in</Button>   
-              </Grid>
-          </Paper>
-      </Grid>
-  )
+    return (
+        <Paper sx={{ minWidth: 350, padding: 4 }} variant='outlined' >
+            <Grid container direction={"column"} justifyContent={"center"} alignItems={"center"} gap={2}>
+                <Grid item>
+                    <Typography variant="h3">Sign In</Typography>
+                </Grid>
+                <Grid item container >
+                    <Typography variant="caption" gutterBottom >Select a role</Typography>
+                    <FormControl size="small" fullWidth>
+                        <Select>
+                            <MenuItem value="Admin" >Admin</MenuItem>
+                            <MenuItem value="Student" >Student</MenuItem>
+                            <MenuItem value="Teacher" >Teacher</MenuItem>
+                            <MenuItem value="Parent" >Parent</MenuItem>
+                        </Select>
+                    </FormControl>
+                </Grid>
+                <Grid item container >
+                    <Typography variant="caption" gutterBottom >Email</Typography>
+                    <TextField size="small" fullWidth />
+                </Grid>
+                <Grid item container >
+                    <Typography variant="caption" gutterBottom >Password</Typography>
+                    <TextField size="small" fullWidth type="password" />
+                </Grid>
+                <Grid item container marginTop={2} >
+                    <Button variant="contained" fullWidth>Sign In</Button>
+                </Grid>
+            </Grid>
+        </Paper>
+    )
 }
 
 export default SignIn;
