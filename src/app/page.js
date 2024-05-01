@@ -1,17 +1,22 @@
 'use client';
 
 import React, { useState } from "react";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import { Typography, Grid } from "@mui/material";
 import { lightTheme } from "./_theme/lightTheme";
 import { darkTheme } from "./_theme/darkTheme";
 import ColorMode from "./_components/colorMode/page";
 import SignIn from "./_components/Signin/page";
+import { useContext } from "react";
+import { ThemeContext } from "./_context/themeContext";
+import { useRouter } from "next/navigation";
 
 const Home = () => {
-  const [darkMode, setDarkMode] = useState(false);
 
+  const { darkMode, setDarkMode } = useContext(ThemeContext);
+  console.log(darkMode,setDarkMode,"darkMode");;
+  const router = useRouter();
   const handleThemeChange = () => {
     setDarkMode(!darkMode);
   };
