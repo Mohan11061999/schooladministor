@@ -1,16 +1,34 @@
 'use client';
 import { createTheme } from '@mui/material/styles';
 
-const lightPalette = {
+const theme = {
     palette: {
-        mode: "light",
-        primary : {
-          main: "#000",
+        primary: {
+          main: '#7F3B8F', 
+        },
+        secondary: {
+          main: '#F2F2F2', 
+        },
+        // error: {
+        //   main: '#C02942', 
+        // },
+        warning: {
+          main: '#F7D09B', 
+        },
+        // info: {
+        //   main: '#9B59B6', 
+        // },
+        success: {
+          main: '#73A96B', 
+        },
+        background: {
+            default: '#f7f9fa',
+            paper:"#fff"
         }
-    },
+      },
     typography: {
         htmlFontSize: 16,
-        fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
+        fontFamily:'"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
         fontWeightLight: 300,
         fontWeightRegular: 400,
         fontWeightMedium: 500,
@@ -75,6 +93,9 @@ const lightPalette = {
           textTransform: 'capitalize'
         }
     },
-};
-  
-export const lightTheme = createTheme(lightPalette);
+    components: {
+      
+    },
+  };
+
+export const Theme = createTheme(theme);
