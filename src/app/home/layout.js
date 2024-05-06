@@ -3,9 +3,9 @@ import { SideBar } from '@/components/sidebar/sidebar';
 import { TopBar } from '@/components/topbar/topbar';
 import React from 'react';
 export default function Layout({ children }) {
-    const [open, setOpen] = React.useState("50px");
+    const [open, setOpen] = React.useState("70px");
     const handleOpenSideBar = () => {
-        setOpen(open == "50px" ? "200px" : "50px");
+        setOpen(open == "70px" ? "200px" : "70px");
 
     }
     console.log(open);

@@ -1,17 +1,26 @@
-import { AppBar, Avatar, Box, Button, Grid, IconButton, Toolbar, Typography } from '@mui/material'
-import WbSunnySharpIcon from '@mui/icons-material/WbSunnySharp';
+import { Avatar, Grid, Typography } from '@mui/material'
+import Image from 'next/image';
 
 export const TopBar = () => {
     return (
-        <Grid container justifyContent={"space-between"} alignItems={"center"} padding={"20px 10px"} border={"1px solid #e0e0e0"}  >
+        <Grid container justifyContent={"space-between"} alignItems={"center"} padding={"20px 30px"} borderBottom={"1px solid #e0e0e0"}  >
             <Grid item  >
                 <Grid container alignItems={"center"} gap={2}  >
-                    <WbSunnySharpIcon />
-                    <Typography variant='h2'  >Good Morning, User</Typography>
+                    <Image src={"/logo.png"} width={32} height={32} />
+                    <Typography variant='h4' >ABCD School</Typography>
                 </Grid>
             </Grid>
             <Grid item>
-                <Avatar />
+                <Grid container gap={2} justifyContent={"space-between"} alignItems={"center"} >
+                    <Grid item>
+                        <Grid container direction="column"   >
+                            <Grid item><Typography variant='h5' >Mohan</Typography></Grid>
+                            <Grid item><Typography variant='caption' >Staff</Typography></Grid>
+                        </Grid>
+                    </Grid>
+                    <Grid item><Avatar /></Grid>
+                </Grid>
+
             </Grid>
         </Grid>
 
