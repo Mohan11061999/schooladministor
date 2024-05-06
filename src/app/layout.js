@@ -14,7 +14,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <ThemeProvider theme={Theme}>
-        <body className={inter.className} style={{ margin: 0 }}>{children}</body>
+        <body className={inter.className} style={{
+          margin: 0
+        }}>
+          {children}
+        </body>
       </ThemeProvider>
     </html>
   );

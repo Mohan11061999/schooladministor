@@ -6,7 +6,7 @@ import React from 'react'
 const SignIn = () => {
     const router = useRouter();
     return (
-        <Grid container justifyContent={"center"} alignItems={"center"} height={"80vh"} >
+        <Grid container justifyContent={"center"} alignItems={'center'} paddingBottom={"20vh"} height={"100vh"} >
             <Paper sx={{ minWidth: 350, padding: 4 }} variant='outlined' >
                 <Grid container direction={"column"} justifyContent={"center"} alignItems={"center"} gap={2}>
                     <Grid item>
@@ -36,7 +36,7 @@ const SignIn = () => {
                     </Grid>
                 </Grid>
             </Paper>
-        </Grid>
+        </Grid >
     )
 }
 
