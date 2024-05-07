@@ -8,6 +8,7 @@ import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import StudCard from './studCard';
 import { Grid } from '@mui/material';
+import { motion } from 'framer-motion';
 
 const steps = [
     {
@@ -52,12 +53,15 @@ const StudCarosel = () => {
     return (
         <Grid container direction={"column"} justifyContent={"center"} gap={12} >
             <Grid item container gap={2} justifyContent={"space-around"} alignItems={"center"}>
-                {steps[activeStep - 1]?.label ? <StudCard name={steps[activeStep - 1].label} /> : <></>}
-
-                <StudCard name={steps[activeStep].label} />
-
-                {steps[activeStep + 1]?.label ? <StudCard name={steps[activeStep + 1].label} /> : <></>}
-
+                <motion.div initial={{ scale: 0.7 }}  >
+                    {steps[activeStep - 1]?.label ? <StudCard name={steps[activeStep - 1].label} /> : <></>}
+                </motion.div>
+                <motion.div initial={{ scale: 0.9 }} whileTap={{ translateX: -100 }}  >
+                    <StudCard name={steps[activeStep].label} />
+                </motion.div>
+                <motion.div initial={{ scale: 0.7 }} >
+                    {steps[activeStep + 1]?.label ? <StudCard name={steps[activeStep + 1].label} /> : <></>}
+                </motion.div>
             </Grid>
             <Grid item  >
                 <MobileStepper
