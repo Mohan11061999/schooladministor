@@ -7,7 +7,7 @@ export const TopBar = () => {
             <Grid item  >
                 <Grid container alignItems={"center"} gap={2}  >
                     <Image src={"/logo.png"} width={32} height={32} />
-                    <Typography variant='h4' >ABCD School</Typography>
+                    <Typography variant='h4' color={"GrayText"} >ABCD School</Typography>
                 </Grid>
             </Grid>
             <Grid item>

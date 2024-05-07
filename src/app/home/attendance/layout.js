@@ -3,13 +3,13 @@ import React from 'react'
 
 export default function AttendanceLayout({ children }) {
     return (
-        <Grid container >
-            <Grid item>
+        <div style={{ display: "grid", gridTemplateColumns: "3fr 1fr", gridTemplateAreas: '"main list"', height: "100%" }} >
+            <div style={{ gridArea: "main" }}>
                 {children}
-            </Grid>
-            <Grid item>
+            </div>
+            <div style={{ gridArea: "list", backgroundColor: "red" }}>
                 //List
-            </Grid>
-        </Grid>
+            </div>
+        </div>
     )
 }

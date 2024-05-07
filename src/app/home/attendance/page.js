@@ -1,12 +1,13 @@
 import React from 'react'
 import StudCard from './studCard'
+import { Grid } from '@mui/material'
+import StudCarosel from './studCarosel'
 
 const Attendance = () => {
     return (
-        <div>
-            <StudCard />
-        </div>
+        <StudCarosel />
     )
+
 }
 
 export default Attendance

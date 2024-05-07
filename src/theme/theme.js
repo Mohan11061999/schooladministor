@@ -8,19 +8,28 @@ const theme = {
       bg: '#FCEFFF',
     },
     secondary: {
-      main: '#F2F2F2',
+      main: '#6f51b0',
+      bg: '#eae8ff'
     },
-    // error: {
-    //   main: '#C02942', 
-    // },
+    error: {
+      main: '#ff5445',
+      bg: '#ffe6e6'
+    },
     warning: {
-      main: '#F7D09B',
+      main: '#a37c29',
+      bg: '#ffe7ab'
     },
-    // info: {
-    //   main: '#9B59B6', 
-    // },
+    pending: {
+      main: '#de7850',
+      bg: '#ffebd9'
+    },
+    info: {
+      main: '#587ebf',
+      bg: '#dcecfc'
+    },
     success: {
-      main: '#73A96B',
+      main: '#3e8020',
+      bg: '#e3f5da',
     },
     background: {
       default: '#f7f9fa',

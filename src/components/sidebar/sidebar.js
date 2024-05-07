@@ -44,9 +44,9 @@ export const SideBar = ({ open, handleOpenSideBar }) => {
     const pathname = usePathname()
     return (
         <Paper color={"background"} sx={{ height: "100vh" }} elevation={0} variant="outlined" justifyContent="center" >
-            <Grid container sx={{ padding: "20px 0" }} >
-                <Grid item container justifyContent={"center"} alignItems="center">
-                    <IconButton size='large' onClick={handleOpenSideBar} >
+            <Grid container sx={{ padding: "20px 20px" }} >
+                <Grid item container justifyContent={"flex-start"} alignItems="center">
+                    <IconButton size='small' onClick={handleOpenSideBar} >
                         {open == "70px" ? <KeyboardDoubleArrowRightIcon /> : <KeyboardDoubleArrowRightIcon sx={{ transform: "rotate(180deg)" }} />}
                     </IconButton>
                 </Grid>

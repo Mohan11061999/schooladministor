@@ -8,10 +8,9 @@ export default function Layout({ children }) {
         setOpen(open == "70px" ? "200px" : "70px");
 
     }
-    console.log(open);
     return (
         <div style={{
-            display: 'grid', gridTemplateColumns: `${open} 1fr`, gridTemplateRows: '100px 1fr', height: '100vh', gridTemplateAreas:
+            display: 'grid', gridTemplateColumns: `${open} 1fr`, gridTemplateRows: '90px 1fr', height: '100vh', gridTemplateAreas:
                 '"sidebar topbar" "sidebar main"'
         }} >
             <div style={{ gridArea: 'sidebar' }}>

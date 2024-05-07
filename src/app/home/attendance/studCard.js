@@ -1,3 +1,4 @@
+import { Theme } from '@/theme/theme'
 import { Button, Card, Grid, Typography } from '@mui/material'
 import Image from 'next/image'
 import React from 'react'
@@ -10,18 +11,17 @@ const StudCard = ({ name, rollNo, age, Gender, email, BloodGroup, address }) => 
                     <Image src={"/imageSkeleton.png"} width={260} height={300} />
                 </Grid>
                 <Grid item >
-                    <Typography variant='h4' >Mohan Ram R k N</Typography>
+                    <Typography variant='h4' >{name}</Typography>
                 </Grid>
                 <Grid item >
                     <Typography variant='caption' >Student</Typography>{" - "}
-                    <Typography variant='caption' >12 M</Typography>{" - "}
-                    <Typography variant='caption' >17ME072</Typography>{" - "}
+                    <Typography variant='caption' >{age} M</Typography>{" - "}
+                    <Typography variant='caption' >{rollNo}</Typography>{" - "}
                     <Typography variant='caption' >B+ve</Typography>
                 </Grid>
-                <Grid item container gap={2} >
-                    <Button variant='outlined' color='info'>On Duty</Button>
-                    <Button variant='outlined' color="warning">Absent</Button>
-                    <Button variant='contained' color='success'>Present</Button>
+                <Grid item container justifyContent={"center"} gap={2} >
+                    <Button variant='outlined'   >Absent</Button>
+                    <Button variant='contained'>Present</Button>
                 </Grid>
                 <Grid item >
                 </Grid>
