@@ -11,6 +11,7 @@ import { Button, Grid, Hidden, IconButton, Paper, Typography } from '@mui/materi
 import React from 'react'
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { Theme } from '@/theme/theme';
 
 const SideBarItem = [
     {
@@ -50,11 +51,10 @@ export const SideBar = ({ open, handleOpenSideBar }) => {
                     </IconButton>
                 </Grid>
             </Grid>
-            <Grid container direction="column" spacing={2}  >
+            <Grid container direction="column" gap={2} px={1} >
                 {SideBarItem.map((item) => (
-                    <Grid item container justifyContent={"center"} alignItems="center" >
-                        {/* <Button variant={pathname == item.href ? "contained" : "outlined"} color={pathname == item.href ? "#fff" : "#000"} > */}
-                        <Link href={item.href} style={{ display: 'flex', alignItems: "center", textDecoration: 'none', color: 'black' }}>
+                    <Grid item container justifyContent={"center"} alignItems="center" style={pathname == item.href ? { backgroundColor: Theme.palette.primary.bg, borderRadius: "3px" } : {}} >
+                        <Link href={item.href} style={{ display: "flex", alignItems: "center", textDecoration: 'none', color: 'black' }} >
                             <IconButton >
                                 {pathname == item.href ? (
                                     <item.activeIcon color="primary" />
@@ -66,7 +66,6 @@ export const SideBar = ({ open, handleOpenSideBar }) => {
                             {open == "200px" ? (<Typography variant='h5' width={"120px"} color={pathname == item.href ? "primary" : ""} >{item.name}</Typography>) : (<></>)}
 
                         </Link>
-                        {/* </Button> */}
                     </Grid>
                 ))}
             </Grid>
