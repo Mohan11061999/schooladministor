@@ -7,7 +7,7 @@ export default function AttendanceLayout({ children }) {
             <div style={{ gridArea: "main" }}>
                 {children}
             </div>
-            <div style={{ gridArea: "list", backgroundColor: "red" }}>
+            <div style={{ gridArea: "list" }}>
                 //List
             </div>
         </div>
