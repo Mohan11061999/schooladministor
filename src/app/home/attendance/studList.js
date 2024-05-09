@@ -7,7 +7,7 @@ import { Theme } from '@/theme/theme'
 const StudList = () => {
     return (
         <Container style={{
-            height: `calc(100vh - 90px)`,
+            height: `calc(100vh - 200px)`,
             backgroundColor: Theme.palette.background.default,
             overflow: "auto",
         }} >
@@ -16,9 +16,6 @@ const StudList = () => {
 
 
             }} >
-                <Grid item position={"sticky"} top={"0"} paddingY={"20px"} bgcolor={Theme.palette.background.default} zIndex={"88"} >
-                    <Typography variant='h5' >Students List</Typography>
-                </Grid>
                 <Grid item >
                     <StudHorizontalCard />
                 </Grid>

@@ -1,40 +1,33 @@
 import { MoreVert } from '@mui/icons-material'
-import { Avatar, Card, CardHeader, Grid, IconButton, Paper, Typography } from '@mui/material'
+import { Avatar, Card, CardHeader, ToggleButton, Typography } from '@mui/material'
 import React from 'react'
+import CheckBoxIcon from '@mui/icons-material/CheckBox';
 
 const StudHorizontalCard = () => {
+    const [selected, setSelected] = React.useState(false)
     return (
-        // <Paper variant='outlined'>
-        //     <Grid container >
-        //         <Grid item container>
-        //             <Avatar variant='square' sx={{ width: 70, height: 70, marginRight: 1 }} />
-        //             <Grid item container>
-        //                 <Grid item> <Typography variant='h6' >Student Name</Typography></Grid>
-        //                 <Grid item> <Typography variant='h6' >12M</Typography></Grid>
-        //             </Grid>
-
-        //         </Grid>
-        //         <Grid item>
-
-        //         </Grid>
-        //     </Grid>
-        // </Paper>
         <Card sx={{ maxWidth: 345 }} variant='outlined' >
             <CardHeader
                 avatar={
-                    <Avatar variant='square' >
-                        R
-                    </Avatar>
+                    <Avatar variant='square' src='/imageSkeleton.png' sx={{ width: 40, height: 40 }} />
                 }
                 action={
-                    <IconButton aria-label="settings">
-                        <MoreVert />
-                    </IconButton>
+                    < ToggleButton
+                        value="check"
+                        selected={selected}
+                        onChange={() => {
+                            setSelected(!selected);
+                        }}
+                        color="success"
+                        size='small'
+                    >
+                        <CheckBoxIcon />
+                    </ToggleButton >
                 }
-                title={<Typography variant='h6' color={"black"} >Mohan 12M</Typography>}
+                title={< Typography variant='h6' color={"black"} > Mohan 12M</Typography >}
                 subheader="17ME072 - B+ve - abcd"
             />
-        </Card>
+        </Card >
     )
 }
 
