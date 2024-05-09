@@ -1,5 +1,6 @@
 'use client';
 import { Button, FormControl, Grid, MenuItem, Paper, Select, TextField, Typography } from '@mui/material'
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React from 'react'
 
@@ -32,7 +33,7 @@ const SignIn = () => {
                         <TextField size="small" fullWidth type="password" />
                     </Grid>
                     <Grid item container marginTop={2} >
-                        <Button variant="contained" fullWidth onClick={() => { router.push('/home') }}>Sign In</Button>
+                        <Button variant="contained" fullWidth onClick={() => { router.push('/home/dashboard') }}>Sign In</Button>
                     </Grid>
                 </Grid>
             </Paper>

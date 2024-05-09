@@ -3,7 +3,7 @@ import React from 'react'
 import { useTheme } from '@mui/material/styles';
 import MobileStepper from '@mui/material/MobileStepper';
 import StudCard from './studCard';
-import { Grid, IconButton, MenuItem, Select, Typography } from '@mui/material';
+import { Grid, Hidden, IconButton, MenuItem, Select, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
@@ -67,17 +67,21 @@ const StudCarosel = () => {
                     </Select>
                 </Grid>
             </Grid>
-            <Grid item container gap={2} justifyContent={"space-around"} alignItems={"center"}>
+            <Grid item container gap={2} justifyContent={"space-around"} alignItems={"center"} overflow={"hidden"} >
                 <IconButton onClick={handleBack} disabled={activeStep === 0} size='large'  ><ArrowBackIosIcon /></IconButton>
-                <motion.div initial={{ scale: 0.7 }}  >
-                    {steps[activeStep - 1]?.label ? <StudCard name={steps[activeStep - 1].label} /> : <></>}
+                <Hidden lgDown >
+                    <motion.div initial={{ scale: 0.7 }}  >
+                        {steps[activeStep - 1]?.label ? <StudCard name={steps[activeStep - 1].label} /> : <></>}
+                    </motion.div>
+                </Hidden>
+                <motion.div initial={{ scale: 0.9 }}  >
+                    <StudCard name={steps[activeStep].label} handleNext={handleNext} />
                 </motion.div>
-                <motion.div initial={{ scale: 0.9 }} whileTap={{ translateX: -100 }}  >
-                    <StudCard name={steps[activeStep].label} />
-                </motion.div>
-                <motion.div initial={{ scale: 0.7 }} >
-                    {steps[activeStep + 1]?.label ? <StudCard name={steps[activeStep + 1].label} /> : <></>}
-                </motion.div>
+                <Hidden lgDown >
+                    <motion.div initial={{ scale: 0.7 }} >
+                        {steps[activeStep + 1]?.label ? <StudCard name={steps[activeStep + 1].label} /> : <></>}
+                    </motion.div>
+                </Hidden>
                 <IconButton onClick={handleNext} disabled={activeStep === maxSteps - 1} ><ArrowForwardIosIcon /></IconButton>
             </Grid>
             <Grid item container justifyContent={"center"} alignItems={"center"} >

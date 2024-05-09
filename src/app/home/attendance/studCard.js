@@ -3,7 +3,7 @@ import { Button, Card, Grid, Typography } from '@mui/material'
 import Image from 'next/image'
 import React from 'react'
 
-const StudCard = ({ name, rollNo, age, Gender, email, BloodGroup, address }) => {
+const StudCard = ({ name, rollNo, age, Gender, email, BloodGroup, address, handleNext }) => {
     return (
         <Card  >
             <Grid container direction={"column"} justifyContent={"center"} alignItems={"center"} gap={2} px={2} py={2} >
@@ -21,14 +21,14 @@ const StudCard = ({ name, rollNo, age, Gender, email, BloodGroup, address }) => 
                 </Grid>
                 <Grid item container justifyContent={"center"} gap={2} >
                     <Button variant='outlined'   >Absent</Button>
-                    <Button variant='contained'>Present</Button>
+                    <Button variant='contained'  >Present</Button>
                 </Grid>
                 <Grid item >
                 </Grid>
                 <Grid item >
                 </Grid>
             </Grid>
-        </Card>
+        </Card >
     )
 }
 

@@ -5,7 +5,7 @@ import StudCarosel from './studCarosel'
 
 const Attendance = () => {
     return (
-        <div style={{ height: '90vh' }}>
+        <div style={{ height: `calc(100vh - 85.9px)` }}>
             <StudCarosel />
         </div>
     )
