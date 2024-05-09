@@ -5,7 +5,9 @@ import StudCarosel from './studCarosel'
 
 const Attendance = () => {
     return (
-        <StudCarosel />
+        <div style={{ height: '90vh' }}>
+            <StudCarosel />
+        </div>
     )
 
 }

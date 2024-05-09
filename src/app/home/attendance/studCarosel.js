@@ -1,14 +1,12 @@
 'use client';
 import React from 'react'
-import Box from '@mui/material/Box';
 import { useTheme } from '@mui/material/styles';
 import MobileStepper from '@mui/material/MobileStepper';
-import Button from '@mui/material/Button';
-import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
-import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import StudCard from './studCard';
-import { Grid } from '@mui/material';
+import { Grid, IconButton, MenuItem, Select, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 const steps = [
     {
@@ -50,9 +48,27 @@ const StudCarosel = () => {
         setActiveStep((prevActiveStep) => prevActiveStep - 1);
     };
 
+
     return (
-        <Grid container direction={"column"} justifyContent={"center"} gap={12} >
+        <Grid container direction={"column"} justifyContent={"space-around"} gap={12}  >
+            <Grid item container justifyContent={"space-between"} alignItems={"center"} height={"70px"} px={3} >
+                <Grid item>
+                    <Typography variant="h3">Students</Typography>
+                </Grid>
+                <Grid item>
+                    <Select
+                        size='small'
+                        value={10}
+                        sx={{ width: 150 }}
+                    >
+                        <MenuItem value={10} >Ten</MenuItem>
+                        <MenuItem value={20}>Twenty</MenuItem>
+                        <MenuItem value={30}>Thirty</MenuItem>
+                    </Select>
+                </Grid>
+            </Grid>
             <Grid item container gap={2} justifyContent={"space-around"} alignItems={"center"}>
+                <IconButton onClick={handleBack} disabled={activeStep === 0} size='large'  ><ArrowBackIosIcon /></IconButton>
                 <motion.div initial={{ scale: 0.7 }}  >
                     {steps[activeStep - 1]?.label ? <StudCard name={steps[activeStep - 1].label} /> : <></>}
                 </motion.div>
@@ -62,37 +78,13 @@ const StudCarosel = () => {
                 <motion.div initial={{ scale: 0.7 }} >
                     {steps[activeStep + 1]?.label ? <StudCard name={steps[activeStep + 1].label} /> : <></>}
                 </motion.div>
+                <IconButton onClick={handleNext} disabled={activeStep === maxSteps - 1} ><ArrowForwardIosIcon /></IconButton>
             </Grid>
-            <Grid item  >
+            <Grid item container justifyContent={"center"} alignItems={"center"} >
                 <MobileStepper
-                    variant="dots"
                     steps={maxSteps}
                     position="static"
                     activeStep={activeStep}
-                    nextButton={
-                        <Button
-                            size="small"
-                            onClick={handleNext}
-                            disabled={activeStep === maxSteps - 1}
-                        >
-                            Next
-                            {theme.direction === 'rtl' ? (
-                                <KeyboardArrowLeft />
-                            ) : (
-                                <KeyboardArrowRight />
-                            )}
-                        </Button>
-                    }
-                    backButton={
-                        <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
-                            {theme.direction === 'rtl' ? (
-                                <KeyboardArrowRight />
-                            ) : (
-                                <KeyboardArrowLeft />
-                            )}
-                            Back
-                        </Button>
-                    }
                 />
             </Grid>
         </Grid >

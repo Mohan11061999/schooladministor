@@ -110,7 +110,18 @@ const theme = {
     }
   },
   components: {
-
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          // textTransform: 'capitalize',
+          // borderRadius: 10,
+          // padding: '10px 20px',
+          // '&:hover': {
+          //   boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)'
+          // }
+        }
+      }
+    }
   },
 };
 
