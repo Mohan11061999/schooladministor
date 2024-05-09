@@ -8,7 +8,7 @@ const StudCard = ({ name, rollNo, age, Gender, email, BloodGroup, address, handl
         <Card  >
             <Grid container direction={"column"} justifyContent={"center"} alignItems={"center"} gap={2} px={2} py={2} >
                 <Grid item >
-                    <Image src={"/imageSkeleton.png"} width={260} height={300} />
+                    <Image src={"/imageSkeleton.png"} width={200} height={250} />
                 </Grid>
                 <Grid item >
                     <Typography variant='h4' >{name}</Typography>
@@ -22,8 +22,6 @@ const StudCard = ({ name, rollNo, age, Gender, email, BloodGroup, address, handl
                 <Grid item container justifyContent={"center"} gap={2} >
                     <Button variant='outlined'   >Absent</Button>
                     <Button variant='contained'  >Present</Button>
-                </Grid>
-                <Grid item >
                 </Grid>
                 <Grid item >
                 </Grid>

@@ -51,10 +51,12 @@ const StudCarosel = () => {
 
     return (
         <Grid container direction={"column"} justifyContent={"space-around"} gap={12}  >
-            <Grid item container justifyContent={"space-between"} alignItems={"center"} height={"70px"} px={3} >
-                <Grid item>
-                    <Typography variant="h3">Students</Typography>
-                </Grid>
+            <Grid item container justifyContent={"space-between"} alignItems={"center"} height={"70px"} px={3} bgcolor={theme.palette.background.default} >
+                <Hidden mdDown>
+                    <Grid item>
+                        <Typography variant="h3"> 🌻 Good Morning, Mr Walter White 🧪</Typography>
+                    </Grid>
+                </Hidden>
                 <Grid item>
                     <Select
                         size='small'
